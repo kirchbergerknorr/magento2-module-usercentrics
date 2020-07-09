@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Oleh Kravets <oleh.kravets@snk.de>
+ * @copyright   Copyright (c) 2020 schoene neue kinder GmbH  (https://www.snk.de)
+ * @license     https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="view_block_abstract_to_html_after">
+        <observer name="usercentrics_add_script" instance="Snk\Usercentrics\Observer\AddUsercentricsScript" />
+        <observer name="usercentrics_filter_block_html" instance="Snk\Usercentrics\Observer\FilterBlockHtml" />
+    </event>
+</config>

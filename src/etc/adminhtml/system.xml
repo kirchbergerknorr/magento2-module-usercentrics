@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Oleh Kravets <oleh.kravets@snk.de>
+ * @copyright   Copyright (c) 2020 schoene neue kinder GmbH  (https://www.snk.de)
+ * @license     https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="snk" translate="label" sortOrder="500">
+            <label>SNK</label>
+        </tab>
+        <section id="usercentrics" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Usercentrics</label>
+            <tab>snk</tab>
+            <resource>Snk_Usercentrics::general</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="settings_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Settings ID</label>
+                    <comment><![CDATA[Your Settings-ID can be found in your Settings dashboard under "General".]]></comment>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+                <field id="script_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Script URL</label>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+                <field id="selectors" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Selectors</label>
+                    <frontend_model>Snk\Usercentrics\Block\Adminhtml\System\Config\Form\Field\Selectors</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends><field id="enable">1</field></depends>
+                    <comment><![CDATA[Selectors for html being processed. For more details see <a href="#">documentation</a>.]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
