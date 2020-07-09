@@ -1,5 +1,5 @@
 {
-  "name": "snk/module-usercentrics",
+  "name": "snk/magento2-module-usercentrics",
   "description": "Magento 2 module for Usercentrics integration",
   "require": {
     "magento/magento2-base": "^2.3",

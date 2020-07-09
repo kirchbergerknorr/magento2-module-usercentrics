@@ -12,9 +12,11 @@ Magento 2.3.*, PHP >7.1
 
 ## Installation
 
-**TODO**
+Install with composer:
 
-Install with composer `composer require`
+ ```
+ composer require snk/magento2-module-usercentrics
+```
 
 ## Configuration details
 
