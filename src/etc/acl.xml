@@ -10,7 +10,11 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Snk_Usercentrics::general" title="SNK Usercentrics" sortOrder="10"/>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Config::config">
+                        <resource id="Snk_Usercentrics::general" title="SNK Usercentrics" sortOrder="10"/>
+                    </resource>
+                </resource>
             </resource>
         </resources>
     </acl>
