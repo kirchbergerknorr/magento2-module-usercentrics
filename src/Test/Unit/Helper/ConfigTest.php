@@ -2,7 +2,7 @@
 /**
  * @author      Oleh Kravets <oleh.kravets@snk.de>
  * @copyright   Copyright (c) 2020 schoene neue kinder GmbH  (https://www.snk.de)
- * @license     https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @license     https://opensource.org/licenses/MIT          MIT License
  */
 
 namespace Snk\Usercentrics\Test\Unit\Helper;
