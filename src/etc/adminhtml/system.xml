@@ -33,9 +33,12 @@
                 <field id="selectors" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Selectors</label>
                     <frontend_model>Snk\Usercentrics\Block\Adminhtml\System\Config\Form\Field\Selectors</frontend_model>
-                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <backend_model>Snk\Usercentrics\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                     <depends><field id="enable">1</field></depends>
-                    <comment><![CDATA[Selectors for html being processed. For more details see <a href="#">documentation</a>.]]></comment>
+                    <comment><![CDATA[Selectors for html being processed. For more details see <a target="_blank"
+                        href="https://github.com/kirchbergerknorr/magento2-module-usercentrics#configuration-details">
+                        documentation on GitHub</a>.]]>
+                    </comment>
                 </field>
             </group>
         </section>
