@@ -70,7 +70,11 @@ class Config
     public function getSelectors(): array
     {
         $selectors = [];
-        $selectorsRaw = $this->serializer->unserialize($this->getConfigValue('selectors'));
+        try {
+            $selectorsRaw = $this->serializer->unserialize($this->getConfigValue('selectors'));
+        } catch (\InvalidArgumentException $e) {
+            return $selectors;
+        }
 
         if (is_array($selectorsRaw)) {
             foreach ($selectorsRaw as $selectorRaw) {

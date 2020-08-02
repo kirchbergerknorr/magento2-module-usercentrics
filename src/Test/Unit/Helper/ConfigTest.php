@@ -112,6 +112,21 @@ class ConfigTest extends TestCase
     }
 
     /**
+     * @return void
+     */
+    public function testGetSelectorsException()
+    {
+        $this->serializer->method('unserialize')->willThrowException(
+            new \InvalidArgumentException()
+        );
+
+        $selectors = $this->configHelper->getSelectors();
+
+        $this->assertEmpty($selectors);
+        $this->assertInternalType( 'array', $selectors);
+    }
+
+    /**
      * @return array
      */
     public function configValueProvider()
