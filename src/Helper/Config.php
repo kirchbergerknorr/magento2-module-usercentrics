@@ -41,6 +41,22 @@ class Config
     }
 
     /**
+     * @return bool
+     */
+    public function isSmartDataProtectorEnabled() :bool
+    {
+        return (bool) $this->getConfigValue('smart_data_protector_enable');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPageReloadEnabled() :bool
+    {
+        return (bool) $this->getConfigValue('page_reload_enable');
+    }
+
+    /**
      * @return string
      */
     public function getSettingsID() :string

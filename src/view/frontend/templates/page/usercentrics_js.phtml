@@ -12,3 +12,23 @@
         src="<?= $block->escapeUrl($block->getScriptUrl()) ?>"
         id="<?= $block->escapeHtmlAttr($block->getSettingsId()) ?>">
 </script>
+
+<?php if ($block->isSmartDataProtectorEnabled()): ?>
+    <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
+    <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+<?php endif; ?>
+
+<?php if ($block->isPageReloadEnabled()): ?>
+    <script type="text/javascript">
+        window.addEventListener("onConsentStatusChange", function (e) {
+            if (e.data.event == "consent_changed") {
+                for (prop in e.data) {
+                    // if any consent was revoked
+                    if (e.data[prop] === false) {
+                        window.location.reload()
+                    }
+                }
+            }
+        });
+    </script>
+<?php endif; ?>

@@ -41,4 +41,20 @@ class UsercentricsJs extends Template
     {
         return $this->config->getScriptUrl();
     }
+
+    /**
+     * @return bool
+     */
+    public function isSmartDataProtectorEnabled() :bool
+    {
+        return $this->config->isSmartDataProtectorEnabled();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPageReloadEnabled() :bool
+    {
+        return $this->config->isPageReloadEnabled();
+    }
 }

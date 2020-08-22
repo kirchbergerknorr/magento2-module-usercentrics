@@ -26,17 +26,38 @@
                     <comment><![CDATA[Your Settings-ID can be found in your Settings dashboard under "General".]]></comment>
                     <depends><field id="enable">1</field></depends>
                 </field>
-                <field id="script_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="smart_data_protector_enable" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Smart Data Protector</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[
+                        The <a target="_blank" href="https://docs.usercentrics.com/#/smart-data-protector">
+                        Usercentrics Smart Data Protector </a> is a service that automatically recognizes and blocks
+                        third-party technologies. For example if you embedded a YouTube Video iframe on your site, the
+                        Smart Data Protector will prevent any data from being sent to the YouTube server. Additionally
+                        the Privacy Proxy will provide the users with a preview image of the video.]]></comment>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+                <field id="page_reload_enable" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Page Reload After Consent Revoked</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If the user revokes a consent it's recommended to reload the page to make sure
+                        no scrips that are no more allowed are still executed. <br/>
+                        In order for the feature to work please make sure that a Data Layer with name
+                        "onConsentStatusChange" is configured under <i>Service Settings->Window Events</i> in your
+                        Usercentrics Account.]]></comment>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+                <field id="script_url" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Script URL</label>
                     <depends><field id="enable">1</field></depends>
                 </field>
-                <field id="selectors" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="selectors" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Selectors</label>
                     <frontend_model>Snk\Usercentrics\Block\Adminhtml\System\Config\Form\Field\Selectors</frontend_model>
                     <backend_model>Snk\Usercentrics\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                     <depends><field id="enable">1</field></depends>
-                    <comment><![CDATA[Selectors for html being processed. For more details see <a target="_blank"
-                        href="https://github.com/kirchbergerknorr/magento2-module-usercentrics#configuration-details">
+                    <comment><![CDATA[Manual configuration for html blocks that must be processed. For more details see
+                        <a target="_blank" href="https://github.com/kirchbergerknorr/magento2-module-usercentrics#configuration-details">
                         documentation on GitHub</a>.]]>
                     </comment>
                 </field>

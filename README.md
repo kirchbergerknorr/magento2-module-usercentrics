@@ -24,6 +24,8 @@ Go to `Stores->Configuration->Snk->Usercentrics`
 
 * _Enable_ - enable of disable module for scope.
 * _Settings ID_ - the configuration ID from your Usercentrics account.
+* _Enable Smart Data Protector_ - enable <a target="_blank" href="https://docs.usercentrics.com/#/smart-data-protector">Usercentrics Smart Data Protector </a>.
+* _Enable Page Reload After Consent Revoked_ - reload page if user revokes a consent.
 * _Script URL_ - usercentrics script URL. It should not but may change.
 * _Selectors_ - configuration which decides which parts of Magento application must be processed.
 
@@ -32,6 +34,7 @@ Go to `Stores->Configuration->Snk->Usercentrics`
 _Cookie group_ of each selector corresponds to separate service names under _Data Processing Services_.
 
 For example, here it's "Matomo":
+
 ![Cookie Group](docs/cookie_group.png)
 
 

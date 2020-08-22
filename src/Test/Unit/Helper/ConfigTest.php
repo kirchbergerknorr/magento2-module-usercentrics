@@ -64,6 +64,26 @@ class ConfigTest extends TestCase
      * @dataProvider configValueProvider
      * @return void
      */
+    public function testIsSmartProtectorEnabled($value)
+    {
+        $this->scopeConfig->method('getValue')->willReturn($value);
+        $this->assertInternalType('bool', $this->configHelper->isSmartDataProtectorEnabled());
+    }
+
+    /**
+     * @dataProvider configValueProvider
+     * @return void
+     */
+    public function testIsPageReloadEnabled($value)
+    {
+        $this->scopeConfig->method('getValue')->willReturn($value);
+        $this->assertInternalType('bool', $this->configHelper->isPageReloadEnabled());
+    }
+
+    /**
+     * @dataProvider configValueProvider
+     * @return void
+     */
     public function testGetSettingsId($value)
     {
         $this->scopeConfig->method('getValue')->willReturn($value);
