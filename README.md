@@ -71,7 +71,7 @@ Some magento scripts are initialized in a declarative way,  for example:
 
 Unfortunately Usercentrics cannot set script type back to `x-magento/init` so such calls must be done imperatively in order for Usercentrics to function properly. 
 
-So the above can should be rewritten like this:
+So the above should be rewritten like this:
 ```
 <!--- Will work with Usercentrics -->
 <script type="text/javascript">
